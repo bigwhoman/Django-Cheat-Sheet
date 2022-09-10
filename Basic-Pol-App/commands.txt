@@ -1,0 +1,19 @@
+pip install django 				// installs django
+django-admin startproject {{custom_name}}	// creates a dir with custom_name and runs django project
+cd {{custom_name}}				// go to dir with {{custom_name}} (first one)
+python manage.py runserver {{port number}}      // run the server -- page should open with a rocket (hoooooray!)
+python manage.py startapp polls
+## migrate					// Synchronizes the database state with the current set of models and migrations-- usage : update database without loss of data 
+## makemigrations				// tell Django you've made changes to your models
+python manage.py makemigrations polls		// create migrations for model changes
+python manage.py sqlmigrate polls 0001
+python manage.py check				// checks for any problems in project
+python manage.py migrate 			// apply migration changes for models to database
+python manage.py shell 				// interactive python shell for the Django api
+python manage.py createsuperuser 		// create an admin
+## URLconf					// URLconf maps URL patterns to views
+##  '<int:question_id>/results/'		// example of URL patterns
+## TEMPLATES					// 
+## Namespacing
+## Generic views
+## static files
