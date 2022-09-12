@@ -19,3 +19,9 @@ def index(request):
         # return HttpResponseRedirect(reverse('ToDoList:index', args=(todos,)))
         return HttpResponseRedirect('/ToDoList/')
     return render(request, 'ToDoList/index.html', {'todos': todos})
+
+
+def delete(request, pk):
+    todo = Todo.objects.get(id=pk)
+    todo.delete()
+    return HttpResponseRedirect('/ToDoList/')
